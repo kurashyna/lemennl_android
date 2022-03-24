@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">L\'école des Loustics</string>
+    <string name="homeChoisirEleve">Choisir Elève :</string>
+    <string name="homeTitle">Bienvenue sur L\'école des loustics</string>
+    <string name="homeAddStudent">+</string>
+    <string name="HomeAnonymeButton">Utiliser en tant qu\'Anonyme</string>
+    <string name="defaultStudentName">Nom de l\'élève</string>
+</resources>
