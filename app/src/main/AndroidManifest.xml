@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LécoleDesLoustics">
         <activity
-            android:name=".HomeActivity"
+            android:name=".Home.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

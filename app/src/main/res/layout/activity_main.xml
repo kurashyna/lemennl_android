@@ -35,12 +35,12 @@
             android:text="@string/homeAddStudent"/>
 
     </LinearLayout>
-    <ListView
-        android:id="@+id/studentListView"
-        android:layout_width="match_parent"
-        android:layout_height="250sp"
-        android:footerDividersEnabled="false"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listeElevesView"
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        />
 
     <View
         android:layout_marginTop="15sp"

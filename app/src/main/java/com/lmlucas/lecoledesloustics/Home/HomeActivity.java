@@ -1,9 +1,11 @@
-package com.lmlucas.lecoledesloustics;
+package com.lmlucas.lecoledesloustics.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.lmlucas.lecoledesloustics.R;
 
 public class HomeActivity extends AppCompatActivity {
 

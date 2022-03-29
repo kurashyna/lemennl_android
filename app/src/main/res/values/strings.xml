@@ -5,4 +5,6 @@
     <string name="homeAddStudent">+</string>
     <string name="HomeAnonymeButton">Utiliser en tant qu\'Anonyme</string>
     <string name="defaultStudentName">Nom de l\'élève</string>
+    <string name="homeWelcome">Bienvenue</string>
+    <string name="eleveNomPreset">Nom de l\'Elève</string>
 </resources>
