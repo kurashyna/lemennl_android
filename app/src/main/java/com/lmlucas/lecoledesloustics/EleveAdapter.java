@@ -64,4 +64,11 @@ public class EleveAdapter extends RecyclerView.Adapter<EleveAdapter.ViewHolder> 
         return listeEleves.size();
     }
 
+    public void swap(List<Eleve> liste) {
+        if (liste != null) {
+            this.listeEleves.clear();
+            this.listeEleves.addAll(liste);
+        }
+        notifyDataSetChanged();
+    }
 }
