@@ -2,18 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:onClick="studentChosen">
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/eleveViewName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/eleveNomPreset"/>
+        android:text="@string/eleveNomPreset"
+        android:textSize="20sp"/>
     <TextView
         android:id="@+id/eleveViewAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ans"/>
-
+        android:text="ans"
+        android:textSize="10sp"/>
+    </LinearLayout>
 </LinearLayout>

@@ -2,22 +2,27 @@ package com.lmlucas.lecoledesloustics.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.lmlucas.lecoledesloustics.Models.Eleve;
 import com.lmlucas.lecoledesloustics.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    public static final String STUDENT_NAME = "student_name";
+    public static final String eleveKey = "eleve";
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        String studentName = getIntent().getStringExtra(STUDENT_NAME);
+        // Get the student name from the intent
+        Eleve student= getIntent().getParcelableExtra(eleveKey);
+
         TextView studentWelcome = findViewById(R.id.homeStudentWelcome);
-        studentWelcome.setText(studentWelcome.getText().toString() + studentName);
+        studentWelcome.setText(studentWelcome.getText().toString() + " " + student.getNomEleve());
     }
 }

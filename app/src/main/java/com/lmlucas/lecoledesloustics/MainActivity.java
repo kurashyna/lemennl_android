@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lmlucas.lecoledesloustics.Database.DatabaseClient;
@@ -41,15 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void studentChosen(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
-        TextView studentNameView = (TextView) view;
-
-        intent.putExtra(HomeActivity.STUDENT_NAME, studentNameView.getText().toString());
-        startActivity(intent);
-    }
-
-
+    // Récupération des élèves
     private void getEleves() {
         class GetEleves extends AsyncTask<Void, Void, List<Eleve>> {
             @Override
@@ -62,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onPostExecute(eleves);
                 adapter.swap(eleves);
             }
+
         }
         GetEleves getEleves = new GetEleves();
         getEleves.execute();
@@ -74,5 +68,20 @@ public class MainActivity extends AppCompatActivity {
         // Mise à jour des taches
         getEleves();
 
+    }
+
+    public void onAnonymous(View view) {
+        Intent intent = new Intent(this, HomeActivity.class);
+        Eleve eleve = new Eleve();
+        eleve.setNomEleve("Anonyme");
+        eleve.setAgeEleve(0);
+        eleve.setId(-1);
+        intent.putExtra("eleve", eleve);
+        startActivity(intent);
+    }
+
+    public void addEleve(View view) {
+        Intent intent = new Intent(this, AddEleveActivity.class);
+        startActivity(intent);
     }
 }

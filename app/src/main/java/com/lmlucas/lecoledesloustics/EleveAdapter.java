@@ -1,6 +1,7 @@
 package com.lmlucas.lecoledesloustics;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.lmlucas.lecoledesloustics.Home.HomeActivity;
 import com.lmlucas.lecoledesloustics.Models.Eleve;
 
 import java.util.List;
@@ -57,6 +59,15 @@ public class EleveAdapter extends RecyclerView.Adapter<EleveAdapter.ViewHolder> 
 
         nomTextView.setText(eleve.getNomEleve());
         ageTextView.setText( eleve.getAgeEleve() +" ans");
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), HomeActivity.class);
+                intent.putExtra("eleve", eleve);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

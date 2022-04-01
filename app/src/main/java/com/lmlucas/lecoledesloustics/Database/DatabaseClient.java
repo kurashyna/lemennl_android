@@ -43,7 +43,7 @@ public class DatabaseClient {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
-            //
+            // Permets de remplir la base de données à la première création
             db.execSQL("INSERT INTO Eleves (nomEleve, ageEleve) VALUES(\"Nom Eleve 1\", \"8\");");
             db.execSQL("INSERT INTO Eleves (nomEleve, ageEleve) VALUES(\"Nom Eleve 2\", \"8\");");
 
