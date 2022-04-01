@@ -7,4 +7,8 @@
     <string name="defaultStudentName">Nom de l\'élève</string>
     <string name="homeWelcome">Bienvenue</string>
     <string name="eleveNomPreset">Nom de l\'Elève</string>
+    <string name="addEleveViewTitle">Ajouter un élève</string>
+    <string name="addEleveViewHint">Nom Complet de l\'élève</string>
+    <string name="addEleveAgeHint">Age de l\'élève</string>
+    <string name="addEleveButton">Ajouter l\'élève</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.lmlucas.lecoledesloustics;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lmlucas.lecoledesloustics.Database.DatabaseClient;
 import com.lmlucas.lecoledesloustics.Home.HomeActivity;
@@ -19,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    public final static int ADD_ELEVE_REQUEST = 1;
 
     // Base de données
     private DatabaseClient dbClient;
@@ -82,6 +86,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void addEleve(View view) {
         Intent intent = new Intent(this, AddEleveActivity.class);
-        startActivity(intent);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivityForResult(intent, ADD_ELEVE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == ADD_ELEVE_REQUEST && resultCode == RESULT_OK) {
+            Toast.makeText(this, "Eleve ajouté", Toast.LENGTH_LONG).show();
+            getEleves();
+        }
     }
 }

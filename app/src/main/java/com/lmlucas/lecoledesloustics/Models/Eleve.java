@@ -16,6 +16,10 @@ public class Eleve implements Parcelable {
     private int ageEleve;
 
     public Eleve(){}
+    public Eleve(String nomEleve, int ageEleve) {
+        this.nomEleve = nomEleve;
+        this.ageEleve = ageEleve;
+    }
     protected Eleve(Parcel in) {
         id = in.readLong();
         nomEleve = in.readString();
