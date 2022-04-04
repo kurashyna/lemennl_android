@@ -16,7 +16,8 @@ public class Eleve implements Parcelable {
     private int ageEleve;
 
     public Eleve(){}
-    public Eleve(String nomEleve, int ageEleve) {
+    public Eleve(int id, String nomEleve, int ageEleve) {
+        this.id = id;
         this.nomEleve = nomEleve;
         this.ageEleve = ageEleve;
     }

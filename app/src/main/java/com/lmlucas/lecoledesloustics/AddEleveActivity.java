@@ -2,12 +2,16 @@ package com.lmlucas.lecoledesloustics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.lmlucas.lecoledesloustics.Database.DatabaseClient;
 import com.lmlucas.lecoledesloustics.Models.Eleve;
+
+import java.util.List;
 
 public class AddEleveActivity extends AppCompatActivity {
 
@@ -22,19 +26,35 @@ public class AddEleveActivity extends AppCompatActivity {
 
     public void addEleve(View view) {
 
-       EditText nomEleveView = (EditText) findViewById(R.id.AddEleveNomEditText);
-       EditText ageEleveView = (EditText) findViewById(R.id.AddEleveAgeEditText);
+        class CreateEleve extends AsyncTask<Void, Void, Eleve> {
+            @Override
+            protected Eleve doInBackground(Void... voids){
+                EditText nomEleveView = (EditText) findViewById(R.id.AddEleveNomEditText);
+                EditText ageEleveView = (EditText) findViewById(R.id.AddEleveAgeEditText);
+                if (nomEleveView.getText().toString().isEmpty() || ageEleveView.getText().toString().isEmpty()) {
+                    return null;
+                }
+                String nomEleve = nomEleveView.getText().toString();
+                String ageEleveString = ageEleveView.getText().toString();
+                int ageEleve = Integer.valueOf(ageEleveString);
+                int id = dbClient.getAppDatabase().eleveDao().getLastId() + 1;
+                Eleve eleve = new Eleve(id, nomEleve, ageEleve);
+                dbClient.getAppDatabase().eleveDao().insert(eleve);
+                return eleve;
+            }
+            @Override
+            protected void onPostExecute(Eleve eleve){
+                super.onPostExecute(eleve);
+                if (eleve != null) {
+                    setResult(RESULT_OK);
+                    finish();
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs", Toast.LENGTH_SHORT);
+                }
+            }
 
-       String nomEleve = nomEleveView.getText().toString();
-       String ageEleveString = ageEleveView.getText().toString();
-       if (ageEleveString.isEmpty()) {
-           //TODO : Faire un toast -> "Veuillez entrer un age"
-       } else {
-           // TODO : Réparer le code pour qu'il fonctionne
-           int ageEleve = Integer.parseInt(ageEleveString);
-           dbClient.getAppDatabase().eleveDao().insert(new Eleve(nomEleve, ageEleve));
-           setResult(RESULT_OK);
-           finish();
-       }
+        }
+        CreateEleve createEleve = new CreateEleve();
+        createEleve.execute();
     }
 }

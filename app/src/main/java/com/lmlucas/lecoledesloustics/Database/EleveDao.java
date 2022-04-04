@@ -30,4 +30,7 @@ public interface EleveDao {
 
     @Delete
     void delete(Eleve eleve);
+
+    @Query("SELECT id FROM eleves ORDER BY id DESC LIMIT 1")
+    int getLastId();
 }

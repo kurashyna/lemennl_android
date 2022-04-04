@@ -11,4 +11,5 @@
     <string name="addEleveViewHint">Nom Complet de l\'élève</string>
     <string name="addEleveAgeHint">Age de l\'élève</string>
     <string name="addEleveButton">Ajouter l\'élève</string>
+    <string name="homeSelectActivity">Choisir une activité</string>
 </resources>

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home.HomeActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="OnClick">
 
     <TextView
         android:id="@+id/homeStudentWelcome"
@@ -13,5 +14,36 @@
         android:layout_height="wrap_content"
         android:text="@string/homeWelcome"
         android:gravity="center"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:layout_marginTop="5sp"/>
+    <TextView
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="10sp"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/homeSelectActivity"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:gravity="center">
+        <ImageView
+            android:layout_marginRight="20sp"
+            android:id="@+id/imageMaths"
+            android:src="@drawable/ic_mathematics_activity_icon"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:onClick="onActivityClick"
+             />
+        <ImageView
+            android:layout_marginLeft="20sp"
+            android:id="@+id/imageCulture"
+            android:src="@drawable/ic_culture_activity_icon"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:onClick="onActivityClick"
+            />
+    </LinearLayout>
 </LinearLayout>
