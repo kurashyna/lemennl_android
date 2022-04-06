@@ -2,6 +2,7 @@ package com.lmlucas.lecoledesloustics.Mathematiques;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,5 +17,10 @@ public class MathematiquesHomeActivity extends AppCompatActivity {
     }
 
     public void onExerciceClick(View view) {
+        switch(view.getId()) {
+            case R.id.BoutonTableMultiplication:
+                Intent intent = new Intent(this, TableMultiplicationActivity.class);
+                startActivity(intent);
+        }
     }
 }

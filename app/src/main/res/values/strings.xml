@@ -14,4 +14,7 @@
     <string name="homeSelectActivity">Choisir une activité</string>
     <string name="mathsHomeTitle">Choisir une épreuve</string>
     <string name="mathsHomeMultiplication">Table de multiplication</string>
+    <string name="tableMultiplicationChoisirTable">Choisir une table de multiplication</string>
+    <string name="tableMultiplicationGo">Go !</string>
+    <string name="multiplicationExerciceValider">Valider</string>
 </resources>

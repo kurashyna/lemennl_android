@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LécoleDesLoustics">
         <activity
+            android:name=".Mathematiques.MathematiquesErreurActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mathematiques.TableMultiplicationExerciceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mathematiques.TableMultiplicationActivity"
+            android:exported="false" />
+        <activity
             android:name=".Mathematiques.MathematiquesHomeActivity"
             android:exported="false" />
         <activity

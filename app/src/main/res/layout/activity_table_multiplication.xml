@@ -4,25 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Mathematiques.MathematiquesHomeActivity"
+    tools:context=".Mathematiques.TableMultiplicationActivity"
     android:orientation="vertical"
     tools:ignore="UsingOnClickInXml">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mathsHomeTitle"
-        android:layout_gravity="center"
+        android:text="@string/tableMultiplicationChoisirTable"
         android:textSize="20sp"
-        />
-    <Button
-        android:id="@+id/BoutonTableMultiplication"
-        android:onClick="onExerciceClick"
-        android:layout_marginTop="30sp"
-        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+    <NumberPicker
+        android:id="@+id/tableMultiplicationNumberPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mathsHomeMultiplication"
+        android:layout_gravity="center"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/tableMultiplicationGo"
+        android:onClick="onClick"
+        />
 </LinearLayout>
