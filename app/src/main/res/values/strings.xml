@@ -12,4 +12,6 @@
     <string name="addEleveAgeHint">Age de l\'élève</string>
     <string name="addEleveButton">Ajouter l\'élève</string>
     <string name="homeSelectActivity">Choisir une activité</string>
+    <string name="mathsHomeTitle">Choisir une épreuve</string>
+    <string name="mathsHomeMultiplication">Table de multiplication</string>
 </resources>

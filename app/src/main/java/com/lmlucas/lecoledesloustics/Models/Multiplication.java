@@ -1,6 +1,6 @@
 package com.lmlucas.lecoledesloustics.Models;
 
-class Multiplication {
+public class Multiplication {
     private int Operand1, Operand2;
 
     public Multiplication(int Operand1, int Operand2){

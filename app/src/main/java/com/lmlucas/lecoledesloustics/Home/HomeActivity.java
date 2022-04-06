@@ -3,10 +3,12 @@ package com.lmlucas.lecoledesloustics.Home;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.lmlucas.lecoledesloustics.Mathematiques.MathematiquesHomeActivity;
 import com.lmlucas.lecoledesloustics.Models.Eleve;
 import com.lmlucas.lecoledesloustics.R;
 
@@ -29,5 +31,8 @@ public class HomeActivity extends AppCompatActivity {
     public void onActivityClick(View view) {
         switch (view.getId()) {
             case R.id.imageMaths:
+                Intent intent = new Intent(this, MathematiquesHomeActivity.class);
+                startActivity(intent);
+        }
     }
 }
