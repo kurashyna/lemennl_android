@@ -36,7 +36,7 @@ public class AddEleveActivity extends AppCompatActivity {
                 }
                 String nomEleve = nomEleveView.getText().toString();
                 String ageEleveString = ageEleveView.getText().toString();
-                int ageEleve = Integer.valueOf(ageEleveString);
+                int ageEleve = Integer.parseInt(ageEleveString);
                 int id = dbClient.getAppDatabase().eleveDao().getLastId() + 1;
                 Eleve eleve = new Eleve(id, nomEleve, ageEleve);
                 dbClient.getAppDatabase().eleveDao().insert(eleve);
@@ -50,6 +50,7 @@ public class AddEleveActivity extends AppCompatActivity {
                     finish();
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs", Toast.LENGTH_SHORT);
+                    toast.show();
                 }
             }
 

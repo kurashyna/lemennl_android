@@ -47,7 +47,6 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
     }
 
     public void valider(View view) {
-        //TODO : Faire la vérification des résultats
         int nbErreurs = 0;
 
         for (Map.Entry<Multiplication,EditText> entry : calculs.entrySet())
@@ -58,24 +57,21 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
                     nbErreurs ++;
                 }
             }catch (Exception e){
-                System.out.println(e);
-                nbErreurs = -1;break;
+                Toast.makeText(this, "Veuillez remplir tout les champs", Toast.LENGTH_SHORT).show();
             }
 
         }
         Intent intent;
         //TODO : Gérer les différents cas
-//        if (nbErreurs > 0)
-//
-//        {
-//            intent = new Intent(this, ErreurActivity.class);
-//            intent.putExtra(ErreurActivity.ERRORS_KEY ,Integer.toString(nbErreurs));
-//            startActivityForResult(intent, RES_REQUEST);
-//        }else if(nbErreurs == 0){
-//            intent = new Intent(this, FelicitationActivity.class);
-//            startActivityForResult(intent, RES_REQUEST);
-//        }else{
-//            Toast.makeText(this, "Veuillez remplir tout les champs", Toast.LENGTH_SHORT).show();
-//        }
+        if (nbErreurs > 0)
+
+        {
+            intent = new Intent(this, MathematiquesErreurActivity.class);
+            intent.putExtra(MathematiquesErreurActivity.ERRORS_KEY ,Integer.toString(nbErreurs));
+            startActivityForResult(intent, RES_REQUEST);
+        }else{
+            intent = new Intent(this, FelicitationActivity.class);
+            startActivityForResult(intent, RES_REQUEST);
+        }
     }
 }

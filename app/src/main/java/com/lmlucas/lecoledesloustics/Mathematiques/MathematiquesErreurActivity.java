@@ -8,6 +8,8 @@ import com.lmlucas.lecoledesloustics.R;
 
 public class MathematiquesErreurActivity extends AppCompatActivity {
 
+    public static final String ERRORS_KEY = "1";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
