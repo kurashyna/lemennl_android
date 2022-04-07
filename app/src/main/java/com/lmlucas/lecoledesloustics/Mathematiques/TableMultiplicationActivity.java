@@ -29,4 +29,8 @@ public class TableMultiplicationActivity extends AppCompatActivity {
         intent.putExtra("TABLE_NUMBER", tableNumber);
         startActivity(intent);
     }
+
+    public void onClickMenu(View view) {
+        super.finish();
+    }
 }

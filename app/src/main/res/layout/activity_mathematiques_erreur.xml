@@ -11,5 +11,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:text="@string/mathsErreursTitle"
+        android:textSize="25sp"/>
 
+    <TextView
+        android:id="@+id/multiplicationErreursText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/mathsErreurNombre"
+        android:textSize="20sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/corriger_mes_erreurs"
+        android:textSize="15sp"
+        android:onClick="corriger"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/changer_de_table"
+        android:textSize="15sp"
+        android:onClick="changerTable"/>
 </LinearLayout>

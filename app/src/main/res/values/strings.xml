@@ -17,4 +17,13 @@
     <string name="tableMultiplicationChoisirTable">Choisir une table de multiplication</string>
     <string name="tableMultiplicationGo">Go !</string>
     <string name="multiplicationExerciceValider">Valider</string>
+    <string name="mathsErreursTitle">Dommage !</string>
+    <string name="mathsErreurNombre">Votre nombre d\'erreurs est de :</string>
+    <string name="corriger_mes_erreurs">Corriger mes erreurs</string>
+    <string name="changer_de_table">Changer de table</string>
+    <string name="felicitations">Felicitations !</string>
+    <string name="exerciceReussi">Vous avez réussi l\'exercice !</string>
+    <string name="retourAcceuil">Retour à l\'acceuil</string>
+    <string name="retour_au_menu">Retour au menu</string>
+    <string name="retour">Retour</string>
 </resources>

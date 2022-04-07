@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LécoleDesLoustics">
         <activity
+            android:name=".Mathematiques.FelicitationsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Mathematiques.MathematiquesErreurActivity"
             android:exported="false" />
         <activity

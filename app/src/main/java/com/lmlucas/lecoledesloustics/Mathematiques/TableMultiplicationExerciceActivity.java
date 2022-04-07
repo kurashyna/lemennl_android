@@ -1,7 +1,9 @@
 package com.lmlucas.lecoledesloustics.Mathematiques;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
@@ -24,6 +26,7 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
     public HashMap<Multiplication, EditText> calculs = new HashMap<>();
     public final static int RES_REQUEST = 0;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +36,7 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
         TableMultiplication tableMultiplication = new TableMultiplication(nombre);
         LinearLayout layout = findViewById(R.id.layoutTableMultiplication);
         for (Multiplication multiplication : tableMultiplication.getMultiplications()) {
-            LinearLayout layoutTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_multiplication, null);
+            @SuppressLint("InflateParams") LinearLayout layoutTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_multiplication, null);
             TextView calcul = layoutTMP.findViewById(R.id.template_calcul);
             EditText resultat = layoutTMP.findViewById(R.id.template_resultat);
 
@@ -45,7 +48,17 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
         }
 
     }
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RES_REQUEST) {
+            if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(this, "Corrigez vos erreurs puis valider ", Toast.LENGTH_SHORT).show();
+            } else if (resultCode == RESULT_OK) {
+                super.finish();
+            }
+        }
+    }
     public void valider(View view) {
         int nbErreurs = 0;
 
@@ -57,20 +70,23 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
                     nbErreurs ++;
                 }
             }catch (Exception e){
-                Toast.makeText(this, "Veuillez remplir tout les champs", Toast.LENGTH_SHORT).show();
+
+                nbErreurs = -1;
+                break;
             }
 
         }
         Intent intent;
         //TODO : Gérer les différents cas
         if (nbErreurs > 0)
-
         {
             intent = new Intent(this, MathematiquesErreurActivity.class);
             intent.putExtra(MathematiquesErreurActivity.ERRORS_KEY ,Integer.toString(nbErreurs));
             startActivityForResult(intent, RES_REQUEST);
+        } else if (nbErreurs == -1) {
+            Toast.makeText(this, "Veuillez remplir tout les champs", Toast.LENGTH_SHORT).show();
         }else{
-            intent = new Intent(this, FelicitationActivity.class);
+            intent = new Intent(this, FelicitationsActivity.class);
             startActivityForResult(intent, RES_REQUEST);
         }
     }

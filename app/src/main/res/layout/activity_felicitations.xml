@@ -4,37 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Mathematiques.TableMultiplicationActivity"
+    tools:context=".Mathematiques.FelicitationsActivity"
     android:orientation="vertical"
     tools:ignore="UsingOnClickInXml">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tableMultiplicationChoisirTable"
-        android:textSize="20sp"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:layout_gravity="center"/>
-
-    <NumberPicker
-        android:id="@+id/tableMultiplicationNumberPicker"
+        android:text="@string/felicitations"
+        android:textSize="30sp" />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        />
+        android:gravity="center"
+        android:text="@string/exerciceReussi"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/tableMultiplicationGo"
-        android:onClick="onClick"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
         android:text="@string/retour"
-        android:onClick="onClickMenu"
-        />
+        android:onClick="onClick"
+         />
 </LinearLayout>
