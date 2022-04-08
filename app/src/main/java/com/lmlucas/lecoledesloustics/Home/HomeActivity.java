@@ -33,6 +33,8 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.imageMaths:
                 Intent intent = new Intent(this, MathematiquesHomeActivity.class);
                 startActivity(intent);
+            case R.id.homeBoutonRetour:
+                super.finish();
         }
     }
 }

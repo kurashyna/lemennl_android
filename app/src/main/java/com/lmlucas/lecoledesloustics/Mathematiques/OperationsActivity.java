@@ -87,6 +87,12 @@ public class OperationsActivity extends AppCompatActivity {
                         break;
                     }
                     break;
+                case "/":
+                    if (operations.get(i).getResultat() != operations.get(i).getOperand1() / operations.get(i).getOperand2()) {
+                        nombreErreurs++;
+                        break;
+                    }
+                    break;
             }
         }
 
@@ -100,5 +106,17 @@ public class OperationsActivity extends AppCompatActivity {
             startActivityForResult(intent, RES_REQUEST);
         }
 
+        //TODO : Afficher le nombre d'erreurs sur l'autre vue
+        // Ajouter le OnResult pour le retour au menu
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RES_REQUEST) {
+            if (resultCode == RESULT_CANCELED) {
+                super.finish();
+            }
+        }
     }
 }

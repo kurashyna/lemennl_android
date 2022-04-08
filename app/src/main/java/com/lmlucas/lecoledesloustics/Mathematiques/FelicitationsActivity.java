@@ -16,7 +16,7 @@ public class FelicitationsActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-       setResult(RESULT_OK);
+       setResult(RESULT_CANCELED);
        super.finish();
     }
 }

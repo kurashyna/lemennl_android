@@ -29,4 +29,6 @@
     <string name="boutonOperationsAleatoires">Opérations aléatoires</string>
     <string name="résoudreOpération">Résoudre l\'opération suivante</string>
     <string name="operationsSuivant">Suivant</string>
+    <string name="mathsDommage">Dommage, vous avez raté !</string>
+    <string name="erreursPreset">Vous avez fait</string>
 </resources>

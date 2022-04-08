@@ -1,5 +1,7 @@
 package com.lmlucas.lecoledesloustics.Models;
 
+import java.io.IOError;
+
 public class Calcul {
     private int Operand1, Operand2, resultat;
     private String Operation;
@@ -38,12 +40,12 @@ public class Calcul {
     public static Calcul randomCalcul() {
         int Operand1 = (int) (Math.random() * 10);
         int Operand2 = (int) (Math.random() * 10);
-        while (Operand1 - Operand2 < 0) {
+        while ((Operand1 - Operand2 < 0) || (Operand2 == 0)) {
             Operand1 = (int) (Math.random() * 10);
             Operand2 = (int) (Math.random() * 10);
         }
         String Operation = "";
-        int random = (int) (Math.random() * 3);
+        int random = (int) (Math.random() * 4);
         switch (random) {
             case 0:
                 Operation = "+";
@@ -53,6 +55,9 @@ public class Calcul {
                 break;
             case 2:
                 Operation = "*";
+                break;
+            case 3:
+                Operation = "/";
                 break;
         }
         return new Calcul(Operand1, Operand2, Operation);
