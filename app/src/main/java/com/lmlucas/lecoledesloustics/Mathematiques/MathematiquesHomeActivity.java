@@ -21,6 +21,11 @@ public class MathematiquesHomeActivity extends AppCompatActivity {
             case R.id.BoutonTableMultiplication:
                 Intent intent = new Intent(this, TableMultiplicationActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.BoutonOperations:
+                Intent intent2 = new Intent(this, OperationsActivity.class);
+                startActivity(intent2);
+                break;
         }
     }
 }

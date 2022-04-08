@@ -26,4 +26,7 @@
     <string name="retourAcceuil">Retour à l\'acceuil</string>
     <string name="retour_au_menu">Retour au menu</string>
     <string name="retour">Retour</string>
+    <string name="boutonOperationsAleatoires">Opérations aléatoires</string>
+    <string name="résoudreOpération">Résoudre l\'opération suivante</string>
+    <string name="operationsSuivant">Suivant</string>
 </resources>
