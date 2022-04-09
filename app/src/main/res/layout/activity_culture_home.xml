@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CultureGénérale.CultureHomeActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/culturegénérale"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25sp"
+        android:layout_marginTop="5sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/choisirTheme"
+        android:textSize="15sp"/>
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="15sp"
+        android:id="@+id/imageCulture"
+        android:src="@drawable/ic_france_luggage"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        />
+    <Button
+        android:id="@+id/boutonCultureTousTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:text="@string/tousthèmes"
+        android:onClick="onClick"/>
+
+
+    <Button
+        android:id="@+id/boutonCultureRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40sp"
+        android:text="Retour"
+        android:onClick="onClick"/>
+</LinearLayout>

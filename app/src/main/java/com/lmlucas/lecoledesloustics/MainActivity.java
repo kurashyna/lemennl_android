@@ -9,13 +9,13 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lmlucas.lecoledesloustics.Database.DatabaseClient;
+import com.lmlucas.lecoledesloustics.Home.AddEleveActivity;
 import com.lmlucas.lecoledesloustics.Home.HomeActivity;
 import com.lmlucas.lecoledesloustics.Models.Eleve;
+import com.lmlucas.lecoledesloustics.Models.EleveAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == ADD_ELEVE_REQUEST && resultCode == RESULT_OK) {
             Toast.makeText(this, "Eleve ajouté", Toast.LENGTH_LONG).show();
             getEleves();

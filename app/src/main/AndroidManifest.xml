@@ -4,16 +4,40 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_school"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_school"
         android:supportsRtl="true"
         android:theme="@style/Theme.LécoleDesLoustics">
+        <activity
+            android:name=".CultureGénérale.CultureQuestionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CultureGénérale.CultureHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ErreursActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mathematiques.OperationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FelicitationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mathematiques.MathematiquesErreurActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mathematiques.TableMultiplicationExerciceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mathematiques.TableMultiplicationActivity"
+            android:exported="false" />
         <activity
             android:name=".Mathematiques.MathematiquesHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".AddEleveActivity"
+            android:name=".Home.AddEleveActivity"
             android:exported="false" />
         <activity
             android:name=".Home.HomeActivity"

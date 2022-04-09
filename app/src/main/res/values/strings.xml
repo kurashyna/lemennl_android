@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">L\'école des Loustics</string>
-    <string name="homeChoisirEleve">Choisir Elève :</string>
+    <string name="homeChoisirEleve">Choisir Elève ou en ajouter un</string>
     <string name="homeTitle">Bienvenue sur L\'école des loustics</string>
-    <string name="homeAddStudent">+</string>
+    <string name="homeAddStudent">Ajouter un élève</string>
     <string name="HomeAnonymeButton">Utiliser en tant qu\'Anonyme</string>
     <string name="defaultStudentName">Nom de l\'élève</string>
     <string name="homeWelcome">Bienvenue</string>
@@ -14,4 +14,27 @@
     <string name="homeSelectActivity">Choisir une activité</string>
     <string name="mathsHomeTitle">Choisir une épreuve</string>
     <string name="mathsHomeMultiplication">Table de multiplication</string>
+    <string name="tableMultiplicationChoisirTable">Choisir une table de multiplication</string>
+    <string name="tableMultiplicationGo">Go !</string>
+    <string name="multiplicationExerciceValider">Valider</string>
+    <string name="mathsErreursTitle">Dommage !</string>
+    <string name="mathsErreurNombre">Votre nombre d\'erreurs est de :</string>
+    <string name="corriger_mes_erreurs">Corriger mes erreurs</string>
+    <string name="changer_de_table">Changer de table</string>
+    <string name="felicitations">Felicitations !</string>
+    <string name="exerciceReussi">Vous avez réussi l\'exercice !</string>
+    <string name="retourAcceuil">Retour à l\'acceuil</string>
+    <string name="retour_au_menu">Retour au menu</string>
+    <string name="retour">Retour</string>
+    <string name="boutonOperationsAleatoires">Opérations aléatoires</string>
+    <string name="résoudreOpération">Résoudre l\'opération suivante</string>
+    <string name="operationsSuivant">Suivant</string>
+    <string name="mathsDommage">Dommage, vous avez raté !</string>
+    <string name="erreursPreset">Vous avez fait</string>
+    <string name="choisirTheme">Choisir un thème pour les questions</string>
+    <string name="tousthèmes">Tous les thèmes</string>
+    <string name="cultureQuestion">Question</string>
+    <string name="mathématiques">Mathématiques</string>
+    <string name="culturegénérale">Culture Générale</string>
+    <string name="cliqueSurImage">(En cliquant sur l\'image)</string>
 </resources>

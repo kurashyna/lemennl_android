@@ -4,44 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Mathematiques.MathematiquesHomeActivity"
+    tools:context=".Mathematiques.TableMultiplicationActivity"
     android:orientation="vertical"
     tools:ignore="UsingOnClickInXml">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mathsHomeTitle"
-        android:layout_gravity="center"
+        android:text="@string/tableMultiplicationChoisirTable"
         android:textSize="25sp"
+        android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_marginTop="5sp"
-        />
+        android:layout_gravity="center"
+        android:layout_marginTop="5sp"/>
     <ImageView
         android:layout_gravity="center"
-        android:layout_marginTop="25sp"
+        android:layout_marginTop="15sp"
         android:id="@+id/imageCulture"
         android:src="@drawable/ic_maths_operations"
         android:layout_width="100sp"
         android:layout_height="100sp"
         />
-    <Button
-        android:id="@+id/BoutonTableMultiplication"
-        android:onClick="onExerciceClick"
-        android:layout_marginTop="30sp"
-        android:layout_gravity="center"
+    <NumberPicker
+        android:id="@+id/tableMultiplicationNumberPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mathsHomeMultiplication"
-        />
-    <Button
-        android:id="@+id/BoutonOperations"
-        android:onClick="onExerciceClick"
-        android:layout_marginTop="10sp"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/boutonOperationsAleatoires"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/tableMultiplicationGo"
+        android:onClick="onClick"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/retour"
+        android:onClick="onClickMenu"
+        />
 </LinearLayout>

@@ -6,44 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".Home.HomeActivity"
     android:orientation="vertical"
-    tools:ignore="OnClick">
+    tools:ignore="UsingOnClickInXml">
 
     <TextView
         android:id="@+id/homeStudentWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/homeWelcome"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_marginTop="5sp"/>
+
     <TextView
-        android:layout_marginTop="5sp"
-        android:layout_marginLeft="10sp"
+        android:layout_marginTop="15sp"
         android:textSize="16sp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/homeSelectActivity"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cliqueSurImage"
+        android:layout_gravity="center"
         />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40sp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
         <ImageView
-            android:layout_marginRight="20sp"
             android:id="@+id/imageMaths"
-            android:src="@drawable/ic_mathematics_activity_icon"
+            android:src="@drawable/ic_math_book"
             android:layout_width="120sp"
             android:layout_height="120sp"
             android:onClick="onActivityClick"
              />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mathématiques"/>
         <ImageView
-            android:layout_marginLeft="20sp"
+            android:layout_marginTop="15sp"
             android:id="@+id/imageCulture"
-            android:src="@drawable/ic_culture_activity_icon"
+            android:src="@drawable/ic_france_luggage"
             android:layout_width="120sp"
             android:layout_height="120sp"
             android:onClick="onActivityClick"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/culturegénérale"/>
     </LinearLayout>
+    <Button
+        android:id="@+id/homeBoutonRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_gravity="center"
+        android:text="@string/retour"
+        android:onClick="onActivityClick"
+        />
+
 </LinearLayout>

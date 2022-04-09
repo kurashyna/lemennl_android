@@ -7,7 +7,9 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/ic_user"
+        android:layout_marginStart="5sp"
+        android:layout_marginEnd="10sp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -19,12 +21,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/eleveNomPreset"
-        android:textSize="20sp"/>
+        android:textSize="25sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
     <TextView
         android:id="@+id/eleveViewAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ans"
-        android:textSize="10sp"/>
+        android:textSize="15sp"/>
     </LinearLayout>
 </LinearLayout>

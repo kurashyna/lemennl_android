@@ -1,4 +1,4 @@
-package com.lmlucas.lecoledesloustics;
+package com.lmlucas.lecoledesloustics.Models;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lmlucas.lecoledesloustics.Home.HomeActivity;
-import com.lmlucas.lecoledesloustics.Models.Eleve;
+import com.lmlucas.lecoledesloustics.R;
 
 import java.util.List;
 

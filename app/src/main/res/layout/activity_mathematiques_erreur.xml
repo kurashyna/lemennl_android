@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Mathematiques.MathematiquesErreurActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/mathsErreursTitle"
+        android:textSize="25sp"
+        android:layout_marginTop="5sp"/>
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10sp"
+        android:id="@+id/imageCulture"
+        android:src="@drawable/ic_sad"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        />
+    <TextView
+        android:id="@+id/multiplicationErreursText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/mathsErreurNombre"
+        android:textSize="20sp"
+        android:layout_marginBottom="10sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/corriger_mes_erreurs"
+        android:textSize="15sp"
+        android:onClick="corriger"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/changer_de_table"
+        android:textSize="15sp"
+        android:onClick="changerTable"/>
+</LinearLayout>

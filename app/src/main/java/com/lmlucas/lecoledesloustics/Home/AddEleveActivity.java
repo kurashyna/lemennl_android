@@ -1,4 +1,4 @@
-package com.lmlucas.lecoledesloustics;
+package com.lmlucas.lecoledesloustics.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.lmlucas.lecoledesloustics.Database.DatabaseClient;
 import com.lmlucas.lecoledesloustics.Models.Eleve;
+import com.lmlucas.lecoledesloustics.R;
 
 import java.util.List;
 
@@ -29,18 +30,23 @@ public class AddEleveActivity extends AppCompatActivity {
         class CreateEleve extends AsyncTask<Void, Void, Eleve> {
             @Override
             protected Eleve doInBackground(Void... voids){
-                EditText nomEleveView = (EditText) findViewById(R.id.AddEleveNomEditText);
-                EditText ageEleveView = (EditText) findViewById(R.id.AddEleveAgeEditText);
-                if (nomEleveView.getText().toString().isEmpty() || ageEleveView.getText().toString().isEmpty()) {
+                try {
+                    EditText nomEleveView = (EditText) findViewById(R.id.AddEleveNomEditText);
+                    EditText ageEleveView = (EditText) findViewById(R.id.AddEleveAgeEditText);
+                    if (nomEleveView.getText().toString().isEmpty() || ageEleveView.getText().toString().isEmpty()) {
+                        return null;
+                    }
+                    String nomEleve = nomEleveView.getText().toString();
+                    String ageEleveString = ageEleveView.getText().toString();
+                    int ageEleve = Integer.parseInt(ageEleveString);
+                    int id = dbClient.getAppDatabase().eleveDao().getLastId() + 1;
+                    Eleve eleve = new Eleve(id, nomEleve, ageEleve);
+                    dbClient.getAppDatabase().eleveDao().insert(eleve);
+                    return eleve;
+                } catch (Exception e) {
                     return null;
                 }
-                String nomEleve = nomEleveView.getText().toString();
-                String ageEleveString = ageEleveView.getText().toString();
-                int ageEleve = Integer.valueOf(ageEleveString);
-                int id = dbClient.getAppDatabase().eleveDao().getLastId() + 1;
-                Eleve eleve = new Eleve(id, nomEleve, ageEleve);
-                dbClient.getAppDatabase().eleveDao().insert(eleve);
-                return eleve;
+
             }
             @Override
             protected void onPostExecute(Eleve eleve){
@@ -50,6 +56,7 @@ public class AddEleveActivity extends AppCompatActivity {
                     finish();
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs", Toast.LENGTH_SHORT);
+                    toast.show();
                 }
             }
 

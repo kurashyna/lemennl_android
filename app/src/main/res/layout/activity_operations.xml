@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Mathematiques.OperationsActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/résoudreOpération"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5sp"/>
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:id="@+id/imageCulture"
+        android:src="@drawable/ic_operations"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_marginBottom="5sp"
+        />
+    <TextView
+        android:id="@+id/operationsText"
+        android:layout_marginTop="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opération"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+    <EditText
+        android:id="@+id/operationsEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:hint="  ?  "/>
+
+    <Button
+        android:id="@+id/operationsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/operationsSuivant"
+        android:onClick="onClick"/>
+</LinearLayout>

@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "L'école des Loustics"
+rootProject.name = "lemennl_android"
 include ':app'
