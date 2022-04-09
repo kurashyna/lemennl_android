@@ -11,12 +11,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lmlucas.lecoledesloustics.ErreursActivity;
+import com.lmlucas.lecoledesloustics.FelicitationsActivity;
 import com.lmlucas.lecoledesloustics.Models.Calcul;
 import com.lmlucas.lecoledesloustics.R;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class OperationsActivity extends AppCompatActivity {
 
@@ -106,8 +106,6 @@ public class OperationsActivity extends AppCompatActivity {
             startActivityForResult(intent, RES_REQUEST);
         }
 
-        //TODO : Afficher le nombre d'erreurs sur l'autre vue
-        // Ajouter le OnResult pour le retour au menu
     }
 
     @Override

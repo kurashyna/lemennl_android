@@ -10,13 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LécoleDesLoustics">
         <activity
-            android:name=".Mathematiques.ErreursActivity"
+            android:name=".CultureGénérale.CultureQuestionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CultureGénérale.CultureHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ErreursActivity"
             android:exported="false" />
         <activity
             android:name=".Mathematiques.OperationsActivity"
             android:exported="false" />
         <activity
-            android:name=".Mathematiques.FelicitationsActivity"
+            android:name=".FelicitationsActivity"
             android:exported="false" />
         <activity
             android:name=".Mathematiques.MathematiquesErreurActivity"
@@ -31,7 +37,7 @@
             android:name=".Mathematiques.MathematiquesHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".AddEleveActivity"
+            android:name=".Home.AddEleveActivity"
             android:exported="false" />
         <activity
             android:name=".Home.HomeActivity"

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">L\'école des Loustics</string>
-    <string name="homeChoisirEleve">Choisir Elève :</string>
+    <string name="homeChoisirEleve">Choisir Elève ou en ajouter un</string>
     <string name="homeTitle">Bienvenue sur L\'école des loustics</string>
-    <string name="homeAddStudent">+</string>
+    <string name="homeAddStudent">Ajouter un élève</string>
     <string name="HomeAnonymeButton">Utiliser en tant qu\'Anonyme</string>
     <string name="defaultStudentName">Nom de l\'élève</string>
     <string name="homeWelcome">Bienvenue</string>
@@ -31,4 +31,10 @@
     <string name="operationsSuivant">Suivant</string>
     <string name="mathsDommage">Dommage, vous avez raté !</string>
     <string name="erreursPreset">Vous avez fait</string>
+    <string name="choisirTheme">Choisir un thème pour les questions</string>
+    <string name="tousthèmes">Tous les thèmes</string>
+    <string name="cultureQuestion">Question</string>
+    <string name="mathématiques">Mathématiques</string>
+    <string name="culturegénérale">Culture Générale</string>
+    <string name="cliqueSurImage">(En cliquant sur l\'image)</string>
 </resources>

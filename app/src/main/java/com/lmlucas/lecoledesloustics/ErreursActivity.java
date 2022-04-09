@@ -1,4 +1,4 @@
-package com.lmlucas.lecoledesloustics.Mathematiques;
+package com.lmlucas.lecoledesloustics;
 
 import androidx.appcompat.app.AppCompatActivity;
 

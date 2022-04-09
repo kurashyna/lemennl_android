@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.lmlucas.lecoledesloustics.CultureGénérale.CultureHomeActivity;
 import com.lmlucas.lecoledesloustics.Mathematiques.MathematiquesHomeActivity;
 import com.lmlucas.lecoledesloustics.Models.Eleve;
 import com.lmlucas.lecoledesloustics.R;
@@ -27,14 +28,20 @@ public class HomeActivity extends AppCompatActivity {
         TextView studentWelcome = findViewById(R.id.homeStudentWelcome);
         studentWelcome.setText(studentWelcome.getText().toString() + " " + student.getNomEleve());
     }
-
+    Intent intent;
     public void onActivityClick(View view) {
         switch (view.getId()) {
             case R.id.imageMaths:
-                Intent intent = new Intent(this, MathematiquesHomeActivity.class);
+                intent = new Intent(this, MathematiquesHomeActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.imageCulture:
+                intent = new Intent(this, CultureHomeActivity.class);
+                startActivity(intent);
+                break;
             case R.id.homeBoutonRetour:
                 super.finish();
+                break;
         }
     }
 }

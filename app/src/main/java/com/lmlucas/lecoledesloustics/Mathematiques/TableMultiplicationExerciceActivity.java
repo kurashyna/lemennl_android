@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lmlucas.lecoledesloustics.FelicitationsActivity;
 import com.lmlucas.lecoledesloustics.Models.Multiplication;
 import com.lmlucas.lecoledesloustics.Models.TableMultiplication;
 import com.lmlucas.lecoledesloustics.R;
@@ -77,7 +78,6 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
 
         }
         Intent intent;
-        //TODO : Gérer les différents cas
         if (nbErreurs > 0)
         {
             intent = new Intent(this, MathematiquesErreurActivity.class);
@@ -90,4 +90,5 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
             startActivityForResult(intent, RES_REQUEST);
         }
     }
+
 }

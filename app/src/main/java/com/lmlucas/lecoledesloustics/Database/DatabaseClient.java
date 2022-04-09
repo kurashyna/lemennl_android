@@ -44,8 +44,29 @@ public class DatabaseClient {
             super.onCreate(db);
 
             // Permets de remplir la base de données à la première création
-            db.execSQL("INSERT INTO Eleves (nomEleve, ageEleve) VALUES(\"Nom Eleve 1\", \"8\");");
-            db.execSQL("INSERT INTO Eleves (nomEleve, ageEleve) VALUES(\"Nom Eleve 2\", \"8\");");
+            /*db.execSQL("INSERT INTO Eleves (nomEleve, ageEleve) VALUES(\"Nom Eleve 1\", \"8\");");
+            db.execSQL("INSERT INTO Eleves (nomEleve, ageEleve) VALUES(\"Nom Eleve 2\", \"8\");");*/
+
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"francais\", \"De quel groupes sont les verbes en -er\", \"1\", \"1er groupe\", \"2eme groupe\", \"3eme groupe\");");
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"culture\", \"Dans quelle ville trouvons-nous la prison d'Alcatraz ?\", \"3\", \"Paris\", \"Washington\", \"San Francisco\");");
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"francais\", \"De quel groupes sont les verbes en -ir\", \"3\", \"1er groupe\", \"2eme groupe\", \"3eme groupe\");");
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"culture\", \"Dans quelle ville trouvons-nous le Pont Chaban Delmas ?\", \"2\", \"Paris\", \"Bordeaux\", \"Grenoble\");");
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"culture\", \"Dans quelle ville trouvons-nous le quartier de La Défense ?\", \"3\", \"Paris\", \"Colombes\", \"Courbevoie\");");
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"musiqueFrancaise\", \"A l'Eurovision 2017, qui chante Requiem ?\", \"2\", \"Angèle\", \"Alma\", \"Amel Bent\");");
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"musiqueFrancaise\", \"Qui chante le titre Dernière Danse de l'album Mini World ?\", \"1\", \"Indila\", \"Tal\", \"Shy'm\");");
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"culture\", \"Quand à eu lieu l'ouverture de la Tour Eiffel ?\", \"3\", \"15 Avril 1889\", \"27 Janvier 1889\", \"31 Mars 1889\");");
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"francais\", \"Quelle est la bonne ortographe du mot : chato ?\", \"1\", \"Château\", \"Châto\", \"Châteu\");");
+            db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
+                    "VALUES(\"francais\", \"Que signifie COD ?\", \"3\", \"Call of duty\", \"Coordination d'Objets Determinés\", \"Complement d'Objet Direct\");");
 
         }
     };

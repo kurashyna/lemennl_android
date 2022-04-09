@@ -1,4 +1,4 @@
-package com.lmlucas.lecoledesloustics.Mathematiques;
+package com.lmlucas.lecoledesloustics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,7 @@ public class FelicitationsActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-       setResult(RESULT_CANCELED);
+       setResult(RESULT_OK);
        super.finish();
     }
 }
