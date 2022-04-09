@@ -54,7 +54,7 @@ public class CultureQuestionsActivity extends AppCompatActivity {
                 if (theme.equals("tous")) {
                     return dbClient.getAppDatabase().questionsDao().getAll();
                 } else {
-                    //TODO : faire une requete pour récupérer les questions d'un thème
+                    //TODO : faire une requete pour récupérer les questions d'un thème était prévu
                     return dbClient.getAppDatabase().questionsDao().getAll();
                 }
             }
