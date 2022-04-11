@@ -17,11 +17,13 @@ public class MathematiquesHomeActivity extends AppCompatActivity {
     }
 
     public void onExerciceClick(View view) {
-        switch(view.getId()) {
+        switch (view.getId()) {
+            // Exercice Table de multiplication
             case R.id.BoutonTableMultiplication:
                 Intent intent = new Intent(this, TableMultiplicationActivity.class);
                 startActivity(intent);
                 break;
+            // Exercice opérations aléatoires
             case R.id.BoutonOperations:
                 Intent intent2 = new Intent(this, OperationsActivity.class);
                 startActivity(intent2);

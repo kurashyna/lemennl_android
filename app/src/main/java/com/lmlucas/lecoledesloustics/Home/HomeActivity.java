@@ -16,6 +16,7 @@ import com.lmlucas.lecoledesloustics.R;
 public class HomeActivity extends AppCompatActivity {
 
     public static final String eleveKey = "eleve";
+    Intent intent;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -23,23 +24,28 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Get the student name from the intent
-        Eleve student= getIntent().getParcelableExtra(eleveKey);
+        // Récupération de l'élève
+        Eleve student = getIntent().getParcelableExtra(eleveKey);
         TextView studentWelcome = findViewById(R.id.homeStudentWelcome);
+        // Affichage du nom de l'élève
         studentWelcome.setText(studentWelcome.getText().toString() + " " + student.getNomEleve());
     }
-    Intent intent;
+
+    // Méthode qui permet de rediriger vers l'activité choisie
     public void onActivityClick(View view) {
         switch (view.getId()) {
             case R.id.imageMaths:
+                // Redirection vers l'activité des maths
                 intent = new Intent(this, MathematiquesHomeActivity.class);
                 startActivity(intent);
                 break;
             case R.id.imageCulture:
+                // Redirection vers l'activité sur la culture générale
                 intent = new Intent(this, CultureHomeActivity.class);
                 startActivity(intent);
                 break;
             case R.id.homeBoutonRetour:
+                // Redirection vers l'activité de connexion
                 super.finish();
                 break;
         }

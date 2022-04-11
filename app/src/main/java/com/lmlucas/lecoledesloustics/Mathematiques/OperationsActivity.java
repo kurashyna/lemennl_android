@@ -20,19 +20,23 @@ import java.util.HashMap;
 
 public class OperationsActivity extends AppCompatActivity {
 
+    public final static int RES_REQUEST = 0;
     HashMap<Integer, Calcul> operations = new HashMap<>();
     Integer calculActuel = 0;
     int nombreErreurs;
-    public final static int RES_REQUEST = 0;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operations);
 
+        // On crée les calculs
         for (int i = 0; i < 10; i++) {
             operations.put(i, Calcul.randomCalcul());
         }
+
+        // On affiche le premier calcul
         TextView textView = findViewById(R.id.operationsText);
         textView.setText(operations.get(calculActuel).getOperand1() + " " + operations.get(calculActuel).getOperation() + " " + operations.get(calculActuel).getOperand2());
     }
@@ -43,20 +47,25 @@ public class OperationsActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.operationsText);
         Button button = findViewById(R.id.operationsButton);
         if (editText.getText().toString().equals("")) {
+            // Si l'utilisateur n'a pas tapé de résultat
             Toast.makeText(this, "Veuillez entrer un résultat", Toast.LENGTH_SHORT).show();
         } else {
+            // On vérifie le nombre de calculs réalisés
             if (calculActuel < 10) {
                 operations.get(calculActuel).setResultat(Integer.parseInt(editText.getText().toString()));
                 calculActuel++;
                 if (calculActuel == 10) {
+                    // Si on a fini les calculs
                     textView.setText("Vous avez fini les 10 calculs");
                     button.setText("Valider");
                     editText.setVisibility(View.INVISIBLE);
                 } else {
+                    // Sinon on affiche le calcul suivant
                     textView.setText(operations.get(calculActuel).getOperand1() + " " + operations.get(calculActuel).getOperation() + " " + operations.get(calculActuel).getOperand2());
                     editText.setText("");
                 }
             } else {
+                // Si on a fini les calculs
                 valider();
             }
         }
@@ -66,7 +75,7 @@ public class OperationsActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.operationsText);
         Button button = findViewById(R.id.operationsButton);
         EditText editText = findViewById(R.id.operationsEditText);
-       nombreErreurs = 0;
+        nombreErreurs = 0;
         for (int i = 0; i < 10; i++) {
             switch (operations.get(i).getOperation()) {
                 case "+":
@@ -97,6 +106,7 @@ public class OperationsActivity extends AppCompatActivity {
         }
 
         Intent intent;
+        //Si il y a eu des erreurs
         if (nombreErreurs == 0) {
             intent = new Intent(this, FelicitationsActivity.class);
             startActivityForResult(intent, RES_REQUEST);

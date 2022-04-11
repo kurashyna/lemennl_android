@@ -9,6 +9,7 @@ public class TableMultiplication {
     public TableMultiplication(int table){
         this.table = table;
         multiplications = new ArrayList<>();
+        // On crée les multiplications de la table demandée
         for (int i=1;i<=10;i++)
         {
             multiplications.add(new Multiplication(i,this.table));

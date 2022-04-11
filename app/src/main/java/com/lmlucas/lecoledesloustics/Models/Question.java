@@ -14,6 +14,8 @@ public class Question implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
+    // le tag correspond a la categorie de la question
+    // numeroBonneResponse correspond au numero de la bonne reponse
     private String tag;
     private String question;
     private int numeroBonneReponse;
@@ -73,6 +75,7 @@ public class Question implements Parcelable {
     };
 
     public String getBonneReponse(){
+    // renvoie la bonne reponse en fonction du numero de la bonne reponse
         switch (numeroBonneReponse){
             case 1:
                 return reponse1;
@@ -85,6 +88,7 @@ public class Question implements Parcelable {
         }
     }
     public List<String> getReponses(){
+        // renvoie les reponses dans une liste
         List<String> reponses = new java.util.ArrayList<>();
         reponses.add(reponse1);
         reponses.add(reponse2);

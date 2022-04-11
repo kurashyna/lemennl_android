@@ -47,6 +47,7 @@ public class DatabaseClient {
             /*db.execSQL("INSERT INTO Eleves (nomEleve, ageEleve) VALUES(\"Nom Eleve 1\", \"8\");");
             db.execSQL("INSERT INTO Eleves (nomEleve, ageEleve) VALUES(\"Nom Eleve 2\", \"8\");");*/
 
+            // On ajoute les questions à la base de données
             db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +
                     "VALUES(\"francais\", \"De quel groupes sont les verbes en -er\", \"1\", \"1er groupe\", \"2eme groupe\", \"3eme groupe\");");
             db.execSQL("INSERT INTO Questions (tag, question, numeroBonneReponse, reponse1, reponse2, reponse3) " +

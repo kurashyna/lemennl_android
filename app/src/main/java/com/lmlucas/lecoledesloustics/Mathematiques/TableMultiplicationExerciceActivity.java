@@ -24,8 +24,8 @@ import java.util.Map;
 public class TableMultiplicationExerciceActivity extends AppCompatActivity {
 
     public static final String TABLE_NUMBER = "TABLE_NUMBER";
-    public HashMap<Multiplication, EditText> calculs = new HashMap<>();
     public final static int RES_REQUEST = 0;
+    public HashMap<Multiplication, EditText> calculs = new HashMap<>();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -33,22 +33,29 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_multiplication_exercice);
 
+        //On récupère le nombre de table de multiplication
         int nombre = getIntent().getIntExtra(TABLE_NUMBER, 0);
         TableMultiplication tableMultiplication = new TableMultiplication(nombre);
         LinearLayout layout = findViewById(R.id.layoutTableMultiplication);
+
+        // On crée les champs de saisie
         for (Multiplication multiplication : tableMultiplication.getMultiplications()) {
-            @SuppressLint("InflateParams") LinearLayout layoutTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_multiplication, null);
+            @SuppressLint("InflateParams")
+            //On crée un layout pour chaque multiplication
+            LinearLayout layoutTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_multiplication, null);
             TextView calcul = layoutTMP.findViewById(R.id.template_calcul);
             EditText resultat = layoutTMP.findViewById(R.id.template_resultat);
 
             calcul.setText(multiplication.getOperande1() + " x " + multiplication.getOperande2() + "=");
-            calculs.put(multiplication,resultat);
+            calculs.put(multiplication, resultat);
             resultat.setInputType(InputType.TYPE_CLASS_NUMBER);
 
+            //On ajoute le layout créé à la vue
             layout.addView(layoutTMP);
         }
 
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -60,17 +67,17 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
             }
         }
     }
+
     public void valider(View view) {
         int nbErreurs = 0;
 
-        for (Map.Entry<Multiplication,EditText> entry : calculs.entrySet())
-        {
-            try{
-                if (Integer.parseInt(entry.getValue().getText().toString()) != entry.getKey().getOperande1() * entry.getKey().getOperande2())
-                {
-                    nbErreurs ++;
+        // On calcule le nombre d'erreurs
+        for (Map.Entry<Multiplication, EditText> entry : calculs.entrySet()) {
+            try {
+                if (Integer.parseInt(entry.getValue().getText().toString()) != entry.getKey().getOperande1() * entry.getKey().getOperande2()) {
+                    nbErreurs++;
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
 
                 nbErreurs = -1;
                 break;
@@ -78,14 +85,14 @@ public class TableMultiplicationExerciceActivity extends AppCompatActivity {
 
         }
         Intent intent;
-        if (nbErreurs > 0)
-        {
+        // Si il y a des erreurs on affiche un message d'erreur
+        if (nbErreurs > 0) {
             intent = new Intent(this, MathematiquesErreurActivity.class);
-            intent.putExtra(MathematiquesErreurActivity.ERRORS_KEY ,Integer.toString(nbErreurs));
+            intent.putExtra(MathematiquesErreurActivity.ERRORS_KEY, Integer.toString(nbErreurs));
             startActivityForResult(intent, RES_REQUEST);
         } else if (nbErreurs == -1) {
             Toast.makeText(this, "Veuillez remplir tout les champs", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             intent = new Intent(this, FelicitationsActivity.class);
             startActivityForResult(intent, RES_REQUEST);
         }

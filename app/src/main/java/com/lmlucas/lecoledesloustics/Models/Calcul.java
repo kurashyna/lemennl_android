@@ -38,6 +38,12 @@ public class Calcul {
 
 
     public static Calcul randomCalcul() {
+        // Permet de générer un calcul aléatoire
+        // Avec des opérandes entre 1 et 10
+        // Opérand2 ne peut pas être égal à 0
+        // Le résultat ne peut pas être inférieur à 0
+        // Les opérations sont +, -, *, / et sont aléatoires
+
         int Operand1 = (int) (Math.random() * 10);
         int Operand2 = (int) (Math.random() * 10);
         while ((Operand1 - Operand2 < 0) || (Operand2 == 0)) {

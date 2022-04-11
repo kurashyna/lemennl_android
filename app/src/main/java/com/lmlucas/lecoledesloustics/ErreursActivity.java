@@ -18,8 +18,10 @@ public class ErreursActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_erreurs);
+        // On récupère le nombre d'erreurs
         String nbErreurs = getIntent().getStringExtra(ERROR_KEY);
         TextView nbErreursView = findViewById(R.id.erreursTextView);
+        // On affiche le nombre d'erreurs
         nbErreursView.setText(nbErreursView.getText() + " : " + nbErreurs + " erreurs");
     }
 

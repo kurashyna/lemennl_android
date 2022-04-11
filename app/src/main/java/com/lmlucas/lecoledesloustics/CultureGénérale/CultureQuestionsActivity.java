@@ -38,23 +38,30 @@ public class CultureQuestionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_culture_questions);
+        //On récupère le theme
         theme = getIntent().getStringExtra(QUESTIONS_THEME);
+        //On récupère la base de données
         dbClient = DatabaseClient.getInstance(getApplicationContext());
+        //On récupère les éléments de l'interface
         questionsTitle = (TextView) findViewById(R.id.cultureQuestionTitle);
         questionAffichee = (TextView) findViewById(R.id.cultureQuestion);
         boutonReponse1 = (Button) findViewById(R.id.CultureReponse1);
         boutonReponse2 = (Button) findViewById(R.id.CultureReponse2);
         boutonReponse3 = (Button) findViewById(R.id.CultureReponse3);
+
     }
 
     private void getQuestions() {
+        //On récupère les questions depuis la base de données
         class GetQuestions extends AsyncTask<Void, Void, List<Question>> {
             @Override
             protected List<Question> doInBackground(Void... voids) {
+                //On récupère les questions du theme
                 if (theme.equals("tous")) {
+                    //On renvoie la liste complète des questions
                     return dbClient.getAppDatabase().questionsDao().getAll();
                 } else {
-                    //TODO : faire une requete pour récupérer les questions d'un thème était prévu
+                    //Faire une requete pour récupérer les questions d'un thème était prévu
                     return dbClient.getAppDatabase().questionsDao().getAll();
                 }
             }
@@ -63,7 +70,9 @@ public class CultureQuestionsActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Question> questions) {
                 super.onPostExecute(questions);
+                //On met a jour la liste des questions
                 ListeQuestions = questions;
+                //On affiche la première question
                 questionsTitle.setText("Question " + (questionActuelle + 1) + "/" + ListeQuestions.size());
                 questionAffichee.setText(ListeQuestions.get(questionActuelle).getQuestion());
                 boutonReponse1.setText(ListeQuestions.get(questionActuelle).getReponse1());
@@ -86,11 +95,15 @@ public class CultureQuestionsActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void onClick(View view) {
         Button bouton = (Button) view;
+        //Si la réponse est bonne
         if (bouton.getText().equals(ListeQuestions.get(questionActuelle).getBonneReponse())) {
+            //On passe à la question suivante
             questionActuelle++;
             if (questionActuelle == ListeQuestions.size()) {
+                //Si on a fini toutes les questions
                valider();
             } else {
+                //Sinon on affiche la question suivante
                 questionsTitle.setText("Question " + (questionActuelle + 1) + "/" + ListeQuestions.size());
                 questionAffichee.setText(ListeQuestions.get(questionActuelle).getQuestion());
                 boutonReponse1.setText(ListeQuestions.get(questionActuelle).getReponse1());
@@ -98,11 +111,14 @@ public class CultureQuestionsActivity extends AppCompatActivity {
                 boutonReponse3.setText(ListeQuestions.get(questionActuelle).getReponse3());
             }
         } else {
+            //Sinon on incremente le nombre d'erreurs
             nombreErreur++;
             questionActuelle++;
             if (questionActuelle == ListeQuestions.size()) {
+                //Si on a fini toutes les questions
                 valider();
             } else {
+                //Sinon on affiche la question suivante
                 questionsTitle.setText("Question " + (questionActuelle + 1) + "/" + ListeQuestions.size());
                 questionAffichee.setText(ListeQuestions.get(questionActuelle).getQuestion());
                 boutonReponse1.setText(ListeQuestions.get(questionActuelle).getReponse1());
@@ -115,9 +131,11 @@ public class CultureQuestionsActivity extends AppCompatActivity {
     private void valider() {
         Intent intent;
         if (nombreErreur == 0) {
+            //Si on a pas d'erreur
             intent = new Intent(this, FelicitationsActivity.class);
             startActivityForResult(intent, 1);
         } else {
+            //Sinon on affiche le nombre d'erreurs  
             intent = new Intent(this, ErreursActivity.class);
             intent.putExtra(ErreursActivity.ERROR_KEY, Integer.toString(nombreErreur));
             startActivityForResult(intent, 1);

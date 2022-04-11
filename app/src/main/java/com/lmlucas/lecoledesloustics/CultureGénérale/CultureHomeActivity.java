@@ -21,6 +21,7 @@ public class CultureHomeActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
+        // On récupère l'id de la vue cliquée
         switch (view.getId()) {
             case R.id.boutonCultureTousTheme:
                 Intent intent = new Intent(this, CultureQuestionsActivity.class);

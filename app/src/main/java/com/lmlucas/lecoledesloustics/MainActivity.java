@@ -46,16 +46,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // Récupération des élèves
+    // Récupération des élèves depuis la BDD
     private void getEleves() {
         class GetEleves extends AsyncTask<Void, Void, List<Eleve>> {
             @Override
-            protected List<Eleve> doInBackground(Void... voids){
+            protected List<Eleve> doInBackground(Void... voids) {
+                // On récupère les élèves depuis la BDD
                 List<Eleve> listeEleves = dbClient.getAppDatabase().eleveDao().getAll();
                 return listeEleves;
             }
+
             @Override
-            protected void onPostExecute(List<Eleve> eleves){
+            protected void onPostExecute(List<Eleve> eleves) {
+                // On affiche les élèves dans le RecyclerView
                 super.onPostExecute(eleves);
                 adapter.swap(eleves);
             }
@@ -69,12 +72,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        // Mise à jour des taches
+        // Mise à jour des élèves
         getEleves();
 
     }
 
     public void onAnonymous(View view) {
+        // Si on clique sur "Continuer en tant qu'anonyme"
         Intent intent = new Intent(this, HomeActivity.class);
         Eleve eleve = new Eleve();
         eleve.setNomEleve("Anonyme");
@@ -85,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addEleve(View view) {
+        // Si on clique sur "Ajouter un élève"
         Intent intent = new Intent(this, AddEleveActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivityForResult(intent, ADD_ELEVE_REQUEST);
